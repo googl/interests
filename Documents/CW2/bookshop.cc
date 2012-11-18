@@ -73,19 +73,29 @@ namespace {
   }
 
 // BookSearch(std::string, std::string) { }
-class Books {
-//  public:
-//    Books(std::string ){
+class *Books {
+  public:
+    *Books() : author_("Deitel & Deitel"),
+              title_("C++...Program"),
+              unitprice_("2500.00"),
+              publisher_("Pearson"),
+              quantity_("15")
+              {}
+//      {cout << "| " << author_ << " | " << title_ << " | " << unitprice_ <<
+//      " | " << publisher_ << " | " << quantity_ << '\n';
+//      };
   private:
     std::string author_;
     std::string title_;
-    double unitprice_;
+    float unitprice_;
     std::string publisher_;
     int quantity_;
   };
 }
 
 int main() {
-// NotInStock();
+
+ NotInStock();
 PrintStockTableHeader();
+
     }
