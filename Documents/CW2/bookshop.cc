@@ -32,19 +32,35 @@
  *  all assumptions you might be forced to make for the system to function
  *  optimally. Innovation as well as user friendliness of your interface would be
  *  rewarded.
- * /
+ */
+
+/* TODO(Carey): disorded breakdown of needed actions
+ * - class Books with functions, variables and constructors
+ * - contructors should use the new operator
+ * - comment, comment, comment
+ * - search function:
+       input title and author; searches inventory, returns total cost and
+       requested number of copies.
+   - anymore observations follow the above syntax of TODO(name||email): <todos>
+*/
 
 #include <iostream>
 #include <iomanip>
 // #include <cstdio>
 #include <string>
+
+// put all global functions in an unnamed namespace so code is as OO as possible
 namespace {
   using std::setfill;
   using std::setw;
   using std::cout;
-  void NotInStock(void) {cout << "Required copies not in stock\n";} // Response to not enough in stock
+  using std::cerr;
 
-  void PrintStockTableHeader(void) {  // Stock Table Header
+// print stock shortage to screen
+  void NotInStock(void) {cerr << "Required copies not in stock\n";}
+
+// Stock Table layout with header
+  void PrintStockTableHeader(void) {
     cout << setw(80) << setfill('_') << '\n' << setfill(' ') <<
     '|' << setw(41) << "BOOKSHOP DATABASE" << setw(38) << '|' << '\n' <<
     setw(80) << setfill('_') << '\n' << setfill(' ') <<
@@ -56,8 +72,7 @@ namespace {
     setw(80) << setfill('_') << '\n' << setfill(' ');
   }
 
-  BookSearch(std::string, std::string) {
-}
+// BookSearch(std::string, std::string) { }
 class Books {
 //  public:
 //    Books(std::string ){
@@ -67,10 +82,10 @@ class Books {
     double unitprice_;
     std::string publisher_;
     int quantity_;
-};
+  };
+}
 
 int main() {
 // NotInStock();
 PrintStockTableHeader();
     }
-

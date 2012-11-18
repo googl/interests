@@ -1,3 +1,4 @@
+/* This code is broken */
    #include   <stdio.h>
    #include   <string.h>
    struct  record
