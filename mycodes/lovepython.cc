@@ -53,7 +53,8 @@ class Student {
                     string assess = "This student is above average";
                     return assess;
                 }  
-                else {
+                else
+                {
                      string assess = "This is an Average Student";
                      return assess;
                 }
