@@ -1,4 +1,4 @@
-// Copyright 2012 Carey Riley, Dwayne Reid
+// Copyright 2013 Carey Riley, Dwayne Reid
 //  A Bookshop Inventory Management System
 /*  A small Bookshop maintains the inventory of books sold in the shop. The list
  *  includes (but is not limited to) the following details:
@@ -63,39 +63,55 @@ namespace {
   void PrintStockTableHeader(void) {
     cout << setw(80) << setfill('_') << '\n' << setfill(' ') <<
     '|' << setw(41) << "BOOKSHOP DATABASE" << setw(38) << '|' << '\n' <<
-    setw(80) << setfill('_') << '\n' << setfill(' ') <<
-    "| Author's Name |" <<
+    setw(80) << setfill('_') << '\n' << setfill(' '); 
+/*    "| Author's Name |" <<
     "  Book Title      |" <<
     " Unit Price |" <<
     "  Publisher     |" <<
     "  Stock Count|" << '\n' <<
     setw(80) << setfill('_') << '\n' << setfill(' ');
-  }
+*/
+// Share 80 spaces properly
+    cout << "| Author's Name  ";  // about 17 spaces wide
+    cout << "| Book Title        ";
+    cout << "| Unit Price ";  // about 12 spaces wide
+    cout << "| Stock Count |"; // about 13 spaces
+    
+  };
+
+// Attempt at a search function
+  *SearchAuthorTitle(std::string author, std::string title, Books *booklist) {
+      for(int i=0; i <= 10; ++i)
+// author and title string matches list instance
+      (booklist[i].author_ == author && books[i].title_ == title) ?: booklist.ConstomerWants();
+    };
+// If 
 
 // BookSearch(std::string, std::string) { }
-class *Books {
+class Books {
   public:
-    *Books() : author_("Deitel & Deitel"),
+    Books() : author_("Deitel & Deitel"),
               title_("C++...Program"),
-              unitprice_("2500.00"),
+              unitprice_(2500.00),
               publisher_("Pearson"),
-              quantity_("15")
+              quantity_(15)
               {}
-//      {cout << "| " << author_ << " | " << title_ << " | " << unitprice_ <<
-//      " | " << publisher_ << " | " << quantity_ << '\n';
+//      {cout << "|" <<  author_ << " | " << title_ << " | " << unitprice_ <<
+//      " | " << publisher_ << " | " << quantity_ <<  "|" << '\n';
 //      };
+    double CustomerWants(int quantity) {quantity_ <=  quantity ?: NotInStock() : return quantity * unitprice_;
   private:
     std::string author_;
     std::string title_;
-    float unitprice_;
+    double unitprice_;
     std::string publisher_;
     int quantity_;
   };
-}
+
 
 int main() {
-
- NotInStock();
+NotInStock();
 PrintStockTableHeader();
-
-    }
+Books shelf;
+shelf;
+}
