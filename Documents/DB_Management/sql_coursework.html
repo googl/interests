@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="http://txt2tags.org">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<TITLE>SQL Coursework Tables</TITLE>
+</HEAD><BODY BGCOLOR="white" TEXT="black">
+<CENTER>
+<H1>SQL Coursework Tables</H1>
+<FONT SIZE="4"><I>by Mrs. Robinson</I></FONT><BR>
+</CENTER>
+
+
+<H1>1. TABLE NAME: SYSTEM USER</H1>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>FIELD NAME</TH>
+<TH>DESCRIPTION</TH>
+<TH>FIELD TYPE/SIZE</TH>
+<TH>ATTRIBUTES</TH>
+</TR>
+<TR>
+<TD><I>pk</I> UserId</TD>
+<TD>Login ID</TD>
+<TD>Varchar(16)</TD>
+<TD>Required</TD>
+</TR>
+<TR>
+<TD>Password</TD>
+<TD>User Password</TD>
+<TD>Varchar(32)</TD>
+<TD>Required</TD>
+</TR>
+<TR>
+<TD>FirstName</TD>
+<TD>First Name</TD>
+<TD>Varchar(20)</TD>
+<TD>Required</TD>
+</TR>
+<TR>
+<TD>MiddleName</TD>
+<TD>Middle Initials</TD>
+<TD>Varchar(30)</TD>
+<TD>Optional</TD>
+</TR>
+<TR>
+<TD>LastName</TD>
+<TD>Last Name</TD>
+<TD>Varchar(30)</TD>
+<TD>Required</TD>
+</TR>
+<TR>
+<TD>DepartmentId</TD>
+<TD>Department ID</TD>
+<TD>int</TD>
+<TD>Required (Foreign key for Department table)|</TD>
+</TR>
+</TABLE>
+
+<H1>2. TABLE NAME: DEPARTMENT</H1>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>FIELD NAME</TH>
+<TH>DESCRIPTION</TH>
+<TH>FIELD TYPE/SIZE</TH>
+<TH>ATTRIBUTES</TH>
+</TR>
+<TR>
+<TD><I>pk</I> DepartmentId</TD>
+<TD>Department ID</TD>
+<TD>int</TD>
+<TD>Required</TD>
+</TR>
+<TR>
+<TD>DepartmentDescription</TD>
+<TD>Department Description</TD>
+<TD>Varchar(50)</TD>
+<TD>Required</TD>
+</TR>
+</TABLE>
+
+<H1>3. TABLE NAME: CUSTOMER</H1>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>FIELD NAME</TH>
+<TH>DESCRIPTION</TH>
+<TH>FIELD TYPE/SIZE</TH>
+<TH>ATTRIBUTES</TH>
+</TR>
+<TR>
+<TD>CustomerId <I>pk</I></TD>
+<TD>Customer ID</TD>
+<TD>Varchar(16)</TD>
+<TD>Required</TD>
+</TR>
+<TR>
+<TD>CompanyName</TD>
+<TD>Company Name</TD>
+<TD>Varchar(50)</TD>
+<TD>Required</TD>
+</TR>
+<TR>
+<TD>ContactTitle</TD>
+<TD>Contact Title</TD>
+<TD>Varchar(5)</TD>
+<TD>Required</TD>
+</TR>
+<TR>
+<TD>ContactFirstName</TD>
+<TD>Contact First Name</TD>
+<TD>Varchar(20)</TD>
+<TD>Required</TD>
+</TR>
+<TR>
+<TD>ContactLastName</TD>
+<TD>Contact Last Name</TD>
+<TD>Varchar(50)</TD>
+<TD>Required</TD>
+</TR>
+</TABLE>
+
+<H1>4. TABLE NAME: PRODUCT</H1>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>FIELD NAME</TH>
+<TH>DESCRIPTION</TH>
+<TH>FIELD TYPE/SIZE</TH>
+<TH>ATTRIBUTES</TH>
+</TR>
+<TR>
+<TD>ProductId <I>pk</I></TD>
+<TD>Product ID</TD>
+<TD>int</TD>
+<TD>Required</TD>
+</TR>
+<TR>
+<TD>ProductDescription</TD>
+<TD>Product Description</TD>
+<TD>Varchar(50)</TD>
+<TD>Required</TD>
+</TR>
+<TR>
+<TD>UnitCost</TD>
+<TD>Unit Cost</TD>
+<TD>Money</TD>
+<TD>Required</TD>
+</TR>
+<TR>
+<TD>QuantityInStock</TD>
+<TD>Quantity in stock</TD>
+<TD>int</TD>
+<TD>Required(&gt;=0)</TD>
+</TR>
+<TR>
+<TD>RestockingLevel</TD>
+<TD>Restocking Level</TD>
+<TD>int</TD>
+<TD>Required(&gt;0)</TD>
+</TR>
+</TABLE>
+
+<H1>5. TABLE NAME: SALES</H1>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>FIELD NAME</TH>
+<TH>DESCRIPTION</TH>
+<TH>FIELD TYPE/SIZE</TH>
+<TH>ATTRIBUTES</TH>
+</TR>
+<TR>
+<TD>SalesId</TD>
+<TD>Sales ID</TD>
+<TD>int</TD>
+<TD>Required</TD>
+</TR>
+<TR>
+<TD>CustomerId</TD>
+<TD>Customer ID</TD>
+<TD>Varchar(16)</TD>
+<TD>Required (Foreign key for customer table)</TD>
+</TR>
+<TR>
+<TD>EmployeeId</TD>
+<TD>Employee ID</TD>
+<TD>Varchar(16)</TD>
+<TD>Required(Foreign key for Employee Table</TD>
+</TR>
+<TR>
+<TD>SaleDate</TD>
+<TD>Sale Date</TD>
+<TD>Date Time</TD>
+<TD>Required</TD>
+</TR>
+<TR>
+<TD>SaleTotal</TD>
+<TD>Sale Total</TD>
+<TD>Money</TD>
+<TD>Required</TD>
+</TR>
+</TABLE>
+
+<H1>6. TABLE NAME: SALES DETAIL</H1>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>FIELD NAME</TH>
+<TH>DESCRIPTION</TH>
+<TH>FIELD TYPE/SIZE</TH>
+<TH>ATTRIBUTES</TH>
+</TR>
+<TR>
+<TD>SaleId</TD>
+<TD>Sale ID</TD>
+<TD>Int</TD>
+<TD>Required(Foreign key for sale table)</TD>
+</TR>
+<TR>
+<TD>ProductId</TD>
+<TD>Product ID</TD>
+<TD>int</TD>
+<TD>Required (Foreign key for Sales Table)</TD>
+</TR>
+<TR>
+<TD>UnitCost</TD>
+<TD>Unit Cost</TD>
+<TD>Money</TD>
+<TD>Required (Overrides Product Table - Unit Cost)</TD>
+</TR>
+<TR>
+<TD>Quantity</TD>
+<TD>Quantity</TD>
+<TD>int</TD>
+<TD>Required. Stock should be sufficient for sale completion</TD>
+</TR>
+</TABLE>
+
+<H1>Queries</H1>
+
+ <OL>
+ <LI>Write a query to generate a list of all products and quantities sold.
+ <LI>Generate a list of all sales made per employee (show employeeid, firstname, lastname, dept, sales details of saves made).
+ <LI>Query unique products sold (distinct).
+ <LI>Alter the sales table:
+  <UL>
+  <LI>add a column called discount.
+  <LI>Sale &gt;= $3000 attracts 15% discounts.
+  </UL>
+ <LI>Customerid with id [insert id here] was wrongly informed. Change contact title from Mrs. to Mr.
+  <UL>
+  <LI>Change company name.
+  </UL>
+ <LI>New department added: Marketing department.
+ <LI>Inventory manager added new stock
+ </OL>
+
+<TABLE ALIGN="center" BORDER="1" CELLPADDING="4">
+<TR>
+<TH>ProdId</TH>
+<TH>Prod desc</TH>
+<TH>Unit Cost</TH>
+</TR>
+<TR>
+<TD>123</TD>
+<TD>Shoes</TD>
+<TD>5000</TD>
+</TR>
+<TR>
+<TD>124</TD>
+<TD>Pants</TD>
+<TD>3000</TD>
+</TR>
+</TABLE>
+
+ <OL>
+ <LI>Display data as such that employees in each dept are distinctly shown.
+ <LI>Query the total that purchased &gt; $1000.
+  <UL>
+  <LI>List customers that did not purchase.
+  </UL>
+ </OL>
+
+<!-- html code generated by txt2tags 2.6 (http://txt2tags.org) -->
+<!-- cmdline: txt2tags -t html -o ./sql_coursework.html sql_coursework.t2t -->
+</BODY></HTML>

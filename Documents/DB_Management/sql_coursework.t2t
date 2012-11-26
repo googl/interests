@@ -1,0 +1,69 @@
+SQL Coursework Tables
+by Mrs. Robinson
+
++ TABLE NAME: SYSTEM USER +
+|| FIELD NAME | DESCRIPTION | FIELD TYPE/SIZE | ATTRIBUTES |
+| //pk// UserId | Login ID | Varchar(16) | Required |
+| Password | User Password | Varchar(32) | Required |
+| FirstName | First Name | Varchar(20) | Required |
+| MiddleName | Middle Initials | Varchar(30) | Optional |
+| LastName | Last Name | Varchar(30) | Required |
+| DepartmentId | Department ID | int | Required (Foreign key for Department table)|
+
++ TABLE NAME: DEPARTMENT +
+|| FIELD NAME | DESCRIPTION | FIELD TYPE/SIZE | ATTRIBUTES |
+| //pk// DepartmentId | Department ID | int | Required |
+| DepartmentDescription | Department Description | Varchar(50) | Required |
+
++ TABLE NAME: CUSTOMER +
+|| FIELD NAME | DESCRIPTION | FIELD TYPE/SIZE | ATTRIBUTES |
+| CustomerId //pk// | Customer ID | Varchar(16) | Required |
+| CompanyName | Company Name | Varchar(50) | Required |
+| ContactTitle | Contact Title | Varchar(5) | Required |
+| ContactFirstName | Contact First Name | Varchar(20) | Required |
+| ContactLastName | Contact Last Name | Varchar(50) | Required |
+
++ TABLE NAME: PRODUCT +
+|| FIELD NAME | DESCRIPTION | FIELD TYPE/SIZE | ATTRIBUTES |
+| ProductId //pk// | Product ID | int | Required |
+| ProductDescription | Product Description | Varchar(50) | Required |
+| UnitCost | Unit Cost | Money | Required |
+| QuantityInStock | Quantity in stock | int | Required(>=0) |
+| RestockingLevel | Restocking Level | int | Required(>0) |
+
++ TABLE NAME: SALES +
+|| FIELD NAME | DESCRIPTION | FIELD TYPE/SIZE | ATTRIBUTES |
+| SalesId | Sales ID | int | Required |
+| CustomerId | Customer ID | Varchar(16) | Required (Foreign key for customer table) |
+| EmployeeId | Employee ID | Varchar(16) | Required(Foreign key for Employee Table |
+| SaleDate | Sale Date | Date Time | Required |
+| SaleTotal | Sale Total | Money | Required |
+
++ TABLE NAME: SALES DETAIL  +
+|| FIELD NAME | DESCRIPTION | FIELD TYPE/SIZE | ATTRIBUTES |
+| SaleId | Sale ID | Int | Required(Foreign key for sale table) |
+| ProductId | Product ID | int | Required (Foreign key for Sales Table) |
+| UnitCost | Unit Cost | Money | Required (Overrides Product Table - Unit Cost) |
+| Quantity | Quantity | int | Required. Stock should be sufficient for sale completion |
+
+=Queries=
+
+ + Write a query to generate a list of all products and quantities sold.
+ + Generate a list of all sales made per employee (show employeeid, firstname, lastname, dept, sales details of saves made).
+ + Query unique products sold (distinct).
+ + Alter the sales table:
+  - add a column called discount.
+  - Sale >= $3000 attracts 15% discounts.
+ + Customerid with id ''[insert id here]'' was wrongly informed. Change contact title from Mrs. to Mr.
+  - Change company name.
+ + New department added: Marketing department.
+ + Inventory manager added new stock
+  || ProdId | Prod desc | Unit Cost |
+| 123 | Shoes | 5000 |
+| 124 | Pants | 3000 |
+
+ + Display data as such that employees in each dept are distinctly shown.
+ + Query the total that purchased > $1000.
+  - List customers that did not purchase.
+
+
